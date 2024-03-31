@@ -25,12 +25,12 @@ sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Running Sonarqube
-docker volume create --name sonarqube_data
-docker volume create --name sonarqube_logs
-docker volume create --name sonarqube_extensions
+sudo docker volume create --name sonarqube_data
+sudo docker volume create --name sonarqube_logs
+sudo docker volume create --name sonarqube_extensions
 
-docker run -d --name sonarqube \
-  -p 9000:9000 \
+sudo docker run -d --name sonarqube \
+  -p 80:9000 \
   -e SONAR_JDBC_URL=$1 \
   -e SONAR_JDBC_USERNAME=sonarqube \
   -e SONAR_JDBC_PASSWORD=$2 \
